@@ -113,8 +113,13 @@ function changeLine(delta) {
   renderLine();
 }
 
-prev.addEventListener("click", e => { e.stopPropagation(); changeLine(-1); });
-next.addEventListener("click", e => { e.stopPropagation(); changeLine(1); });
+selector.addEventListener("click", e => {
+  const control = e.target.closest("[data-dir]");
+  if (!control) return;
+  e.preventDefault();
+  e.stopPropagation();
+  changeLine(control.dataset.dir === "prev" ? -1 : 1);
+});
 
 let touchX = null;
 document.addEventListener("touchstart", e => { touchX = e.changedTouches[0].clientX; }, {passive:true});
