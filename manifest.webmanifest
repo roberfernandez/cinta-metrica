@@ -8,5 +8,18 @@
   "background_color": "#07101b",
   "theme_color": "#07101b",
   "lang": "ca",
-  "icons": []
+  "icons": [
+    {
+      "src": "./cinta-metrica-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./cinta-metrica-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
 }
