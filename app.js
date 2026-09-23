@@ -29,8 +29,12 @@ stations.forEach(([code, name], index) => {
   const row = document.createElement("article");
   row.className = "station";
 
-  const repeatDirections = index % 4 === 2;
-  const isLastStation = index === stations.length - 1;
+  // V.2: Trinitat Nova y cada 4 estaciones hacia abajo.
+  const showV2 = index % 4 === 0;
+
+  // V.1: La Pau y cada 4 estaciones hacia arriba.
+  const distanceFromBottom = stations.length - 1 - index;
+  const showV1 = distanceFromBottom % 4 === 0;
 
   row.innerHTML = `
     <div class="ticks ticks-left" aria-hidden="true"></div>
@@ -39,8 +43,9 @@ stations.forEach(([code, name], index) => {
       <div class="name">${name}</div>
     </div>
     <div class="ticks ticks-right" aria-hidden="true"></div>
-    ${repeatDirections ? '<div class="direction-marker direction-left">V.2 ↓</div><div class="direction-marker direction-right">↑ V.1</div>' : ''}
-    ${isLastStation ? '<div class="direction-marker direction-right end-direction">↑ V.1</div>' : ''}
+    ${showV2 ? '<div class="direction-marker direction-left">V.2 ↓</div>' : ''}
+    ${showV1 ? '<div class="direction-marker direction-right">↑ V.1</div>' : ''}
   `;
+
   tape.appendChild(row);
 });
