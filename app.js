@@ -25,9 +25,12 @@ const stations = [
 
 const tape = document.querySelector("#tape");
 
-stations.forEach(([code, name]) => {
+stations.forEach(([code, name], index) => {
   const row = document.createElement("article");
   row.className = "station";
+
+  const repeatDirections = index % 4 === 2;
+
   row.innerHTML = `
     <div class="ticks ticks-left" aria-hidden="true"></div>
     <div class="station-content">
@@ -35,6 +38,7 @@ stations.forEach(([code, name]) => {
       <div class="name">${name}</div>
     </div>
     <div class="ticks ticks-right" aria-hidden="true"></div>
+    ${repeatDirections ? '<div class="direction-marker direction-left">V.2 ↓</div><div class="direction-marker direction-right">↑ V.1</div>' : ''}
   `;
   tape.appendChild(row);
 });
