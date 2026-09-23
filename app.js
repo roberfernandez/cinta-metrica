@@ -30,6 +30,7 @@ stations.forEach(([code, name], index) => {
   row.className = "station";
 
   const repeatDirections = index % 4 === 2;
+  const isLastStation = index === stations.length - 1;
 
   row.innerHTML = `
     <div class="ticks ticks-left" aria-hidden="true"></div>
@@ -39,6 +40,7 @@ stations.forEach(([code, name], index) => {
     </div>
     <div class="ticks ticks-right" aria-hidden="true"></div>
     ${repeatDirections ? '<div class="direction-marker direction-left">V.2 ↓</div><div class="direction-marker direction-right">↑ V.1</div>' : ''}
+    ${isLastStation ? '<div class="direction-marker direction-right">↑ V.1</div>' : ''}
   `;
   tape.appendChild(row);
 });
