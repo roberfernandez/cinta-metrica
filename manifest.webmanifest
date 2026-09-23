@@ -1,0 +1,12 @@
+{
+  "name": "Cinta Mètrica",
+  "short_name": "Cinta Mètrica",
+  "description": "Consulta ràpida de codis i estacions del Metro de Barcelona",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#07101b",
+  "theme_color": "#07101b",
+  "lang": "ca",
+  "icons": []
+}
