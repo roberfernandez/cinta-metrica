@@ -40,7 +40,7 @@ stations.forEach(([code, name], index) => {
     </div>
     <div class="ticks ticks-right" aria-hidden="true"></div>
     ${repeatDirections ? '<div class="direction-marker direction-left">V.2 ↓</div><div class="direction-marker direction-right">↑ V.1</div>' : ''}
-    ${isLastStation ? '<div class="direction-marker direction-right">↑ V.1</div>' : ''}
+    ${isLastStation ? '<div class="direction-marker direction-right end-direction">↑ V.1</div>' : ''}
   `;
   tape.appendChild(row);
 });
