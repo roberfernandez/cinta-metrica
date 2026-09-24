@@ -11,7 +11,7 @@
   <link rel="icon" href="./cinta-metrica-192.png">
   <link rel="apple-touch-icon" href="./cinta-metrica-192.png">
   <title>Cinta Mètrica</title>
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
   <header class="topbar">
@@ -23,9 +23,11 @@
   <main>
     <section class="reel" aria-label="Selector de línia">
       <div class="reel-grip left"></div>
-      <button class="selector" type="button" aria-label="Línia 4">
-        <span data-dir="prev">‹</span><strong>L4</strong><span data-dir="next">›</span>
-      </button>
+      <div class="selector" aria-label="Línia 4">
+        <button class="line-arrow" type="button" data-dir="prev" aria-label="Línia anterior">‹</button>
+        <strong>L4</strong>
+        <button class="line-arrow" type="button" data-dir="next" aria-label="Línia següent">›</button>
+      </div>
       <div class="reel-grip right"></div>
     </section>
 
@@ -35,7 +37,7 @@
     </section>
   </main>
 
-  <script src="app.js?v=9"></script>
+  <script src="app.js?v=10"></script>
   <script>if ("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js"));</script>
 </body>
 </html>
