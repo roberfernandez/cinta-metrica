@@ -113,8 +113,19 @@ function changeLine(delta) {
   renderLine();
 }
 
+function pressFeedback(control) {
+  control.classList.add("is-pressed");
+  window.setTimeout(() => control.classList.remove("is-pressed"), 120);
+}
+
+selector.addEventListener("pointerdown", e => {
+  const control = e.target.closest(".line-arrow");
+  if (!control) return;
+  pressFeedback(control);
+});
+
 selector.addEventListener("click", e => {
-  const control = e.target.closest("[data-dir]");
+  const control = e.target.closest(".line-arrow");
   if (!control) return;
   e.preventDefault();
   e.stopPropagation();
